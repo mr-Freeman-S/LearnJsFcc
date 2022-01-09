@@ -32,12 +32,11 @@ function lookUpProfile(name, prop) {
         const element = contacts[i];
         if (element.firstName == name && element.hasOwnProperty(prop)) {
             return element[prop]
-        } else if (element.firstName == name && !element.hasOwnProperty(prop)) {
-            return "No such property";
-        }
+        } else if (element.firstName != name) {
+            return "No such contact"
+        } else return "No such property"
     }
-    return "No such contact"
     // Only change code above this line
   }
   
-console.log(lookUpProfile("Kristian", "lastName"));
+lookUpProfile("Akira", "likes");
